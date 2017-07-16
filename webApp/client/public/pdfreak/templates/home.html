@@ -1,0 +1,172 @@
+<div class="background " ng-controller="pdfController as pdf">
+    <toast></toast>
+  <div class=" man header">
+    <div class="col-xs-10 pax mll">
+      <img class="logo" src="public\media\papersfreaks logo.png" alt="Logo">
+    </div>
+    <div class="text-right ptm prm">
+      <span class="glyphicon glyphicon-plus text-right add" ng-click="pdf.addFlag=true; pdf.editFlag=false">
+      </span>
+    </div>
+
+  </div>
+
+  <div class="container-fluid mts">
+
+    <div class="col-xm-12 man">
+
+      <div class="container-fluid" ng-show="pdf.addFlag == true">
+
+        <div class="col-sm-12 edit-section">
+
+          <form name="form" class="col-sm-8 mam">
+
+            <div class="strong big-text">
+              Add new document
+            </div>
+
+            <div>
+              <div class="form-group mam">
+                <div class="input-group pal">
+                  <span class="input-group-addon semi-strong">Name</span>
+                  <input class="form-control" type="text" name="" ng-model="pdf.add.name">
+                </div>
+
+                <div class="input-group pal mtm">
+                  <span class="input-group-addon semi-strong">Description</span>
+                  <input class="form-control" type="text" name="" ng-model="pdf.add.description">
+                </div>
+
+                <div class="col-xs-6  input-group pal mtm">
+                  <span class="input-group-addon semi-strong" ng-Maxlength="8" id="user" name="user">
+                    User
+                  </span>
+                  <input class="form-control" type="text" name="" ng-model="pdf.add.user">
+                </div>
+
+                <label class = "mtm btn btn-info ">
+                  Browse<input type="file" file-model="myFile" style="display: none;">
+                </label>
+
+              </div>
+              </div>
+
+              <div>
+                <button class="btn btn-primary mrs" type="button"
+                  ng-click="pdf.addOk(pdf.add.name, pdf.add.description, pdf.add.user, pdf.file)"
+                  ng-disabled="form.user.$valid == false">
+                  Add
+                </button>
+                <button class="btn btn-warning" type="button" ng-click="pdf.cancelAdd()">Cancel</button>
+              </div>
+
+            </form>
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="container-fluid ptm" ng-if="pdf.editFlag == true">
+
+        <div class="col-sm-12 edit-section">
+
+          <div class="col-sm-8 mam">
+
+            <div class="strong big-text">
+              Editar {{pdf.tempName}}
+            </div>
+
+            <div>
+              <div class="form-group mam">
+                <div class="input-group pal">
+                  <span class="input-group-addon semi-strong">Nombre</span>
+                  <input class="form-control" type="text" name="" ng-model="pdf.name">
+                </div>
+
+                <div class="input-group pal mtm">
+                  <span class="input-group-addon semi-strong">Descripción</span>
+                  <input class="form-control" type="text" name="" ng-model="pdf.description">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-primary mrs" type="button" ng-click="pdf.editOk(pdf.id, pdf.name, pdf.description)">
+                Edit
+              </button>
+              <button class="btn btn-warning" type="button" ng-click="pdf.cancelEdit()">Cancel</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="">
+
+        <div class="col-sm-3 col-md-3 col-xs-6 " ng-repeat="doc in pdf.docsData">
+
+          <div class="card-component rounded">
+
+            <div class="card-head">
+
+              <div class="strong">
+                {{doc.name}}
+              </div>
+
+              <div>
+
+                <span>
+                  created in: {{doc.created | date : "dd-MMM-yy"}}
+                </span>
+
+                <span class="right-align">
+                  by: {{doc.user}}
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="card-body text-center pas">
+              <span class="doc">{{doc.description}}</span>
+
+            </div>
+
+            <div class="card-footer ">
+
+              <div class="text-size-md ">
+
+                <span class=" mas" ng-click="pdf.download(doc.pdf)">
+                  <span class="glyphicon glyphicon-download-alt icon2 pax pbs prx"></span>
+                </span>
+
+                <span class=" mas" ng-click=" pdf.edit(doc.id, doc.name, doc.description)">
+                  <span class="glyphicon glyphicon-pencil icon3 pax pbs"></span>
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+</div>

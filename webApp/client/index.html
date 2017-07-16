@@ -1,0 +1,37 @@
+<html ng-app="pdFreakApp">
+    <head>
+      <link rel="stylesheet" href="public/pdfreak/css/styles.css">
+      <link rel="stylesheet" href="public/pdfreak/css/spacing.css">
+        <meta charset="utf-8">
+        <title>Pdfreak</title>
+
+        <!--  Angular Setup -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast-animations.css">
+                <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast.css">
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-ui-router-uib-modal/angular-ui-router-uib-modal.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/ngToast/dist/ngToast.js"></script>
+
+        <!-- Application Setup -->
+        <script src="public/appRoute.js"></script>
+        <script src="public/app.js"></script>
+
+        <!--  Controllers -->
+        <script src="public/pdfreak/directives/fileProvider.directive.js"></script>
+        <script src="public/pdfreak/directives/httpProvider.controller.js"></script>
+        <script src="public/pdfreak/controllers/pdf.service.js"></script>
+        <script src="public/pdfreak/controllers/pdf.controller.js"></script>
+    </head>
+    <body class="man">
+        <!-- The dynamic templates will be served within this div -->
+        <ui-view></ui-view>
+    </body>
+</html>

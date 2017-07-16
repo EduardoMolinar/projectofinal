@@ -1,0 +1,26 @@
+<div
+  class="modal-parent">
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Edit Document</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <div class="form-group">
+      <div class="input-group pal">
+        <span class="input-group-addon">Nombre</span>
+        <input  class="form-control" type="text" name="" ng-model="vm.name">
+      </div>
+
+      <div class="input-group pal mtm">
+        <span class="input-group-addon">Descripción</span>
+        <input  class="form-control" type="text" name="" ng-model="vm.description">
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button"
+      ng-click="vm.ok(vm.id, vm.name, vm.description); vm.editOk(vm.wrapp.id, vm.wrapp.name, vm.wrapp.description)">
+      Edit
+    </button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+  </div>
+</div>

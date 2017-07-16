@@ -1,0 +1,15 @@
+{
+  "name": "pdfreak",
+  "version": "1.0.0",
+  "description": "Visor de papers cientificos en formato pdf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Molinar",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.3"
+  }
+}

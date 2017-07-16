@@ -1,0 +1,8 @@
+<div ng-controller="pdfController">
+    <div>
+    sadsad  
+      <div ng-include="public/pdfreak/templates/home.html">
+      asdsadsadsda
+      </div>
+    </div>
+</div>
